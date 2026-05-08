@@ -10,12 +10,9 @@ main:
   - name: Bio
     url: /bio/
     weight: 11
-  - name: Papers
-    url: /#papers
+  - name: Research
+    url: /research/
     weight: 12
-  - name: Talks
-    url: /#talks
-    weight: 13
   - name: 日本語
     url: /ja/
     weight: 50
