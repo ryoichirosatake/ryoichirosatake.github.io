@@ -13,7 +13,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: ''
+role: Student
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -45,5 +45,5 @@ social:
     link: https://github.com/satake231
 
 # Avatar (photo) in content/authors/me/ — name the file avatar.jpg or avatar.png
-avatar_filename: avatar.jpg
+avatar_filename: ""
 ---
