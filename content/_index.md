@@ -76,6 +76,7 @@ sections:
     design:
       view: card
   - block: collection
+    active: false
     id: news
     content:
       title: Recent News
