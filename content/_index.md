@@ -8,10 +8,10 @@ sections:
   - block: resume-biography-3
     content:
       username: me
-      text: ''
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
+      text: |
+        (ここに一言自己紹介が入ります)
+
+        [CV を見る →](https://www.dropbox.com/xxxxxxx/resume.pdf)
       headings:
         about: ''
         education: ''
@@ -19,7 +19,7 @@ sections:
     design:
       background:
         gradient_mesh:
-          enable: true
+          enable: false
       name:
         size: md
       avatar:
