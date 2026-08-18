@@ -11,7 +11,7 @@ name:
 postnominals: []
 status:
   icon: ''
-role: Student
+role: ''
 bio: ''
 
 affiliations: []
@@ -23,7 +23,10 @@ links:
   - icon: brands/github
     url: https://github.com/satake231
 
-interests: []
+interests:
+  - Political Economy
+  - Development Economics
+  - Urban Economics
 
 education: []
 

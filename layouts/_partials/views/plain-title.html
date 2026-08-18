@@ -1,0 +1,6 @@
+{{/* Project view: bare title link, no author/year citation prefix */}}
+{{ $item := .item }}
+<div class="pub-list-item view-plain-title" style="margin-bottom: 1rem">
+  <span aria-hidden="true">・</span>
+  <a href="{{ $item.RelPermalink }}" class="underline">&ldquo;{{ $item.Title }}&rdquo;</a>
+</div>

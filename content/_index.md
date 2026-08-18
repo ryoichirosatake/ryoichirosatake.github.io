@@ -9,13 +9,13 @@ sections:
     content:
       username: me
       text: |
-        (ここに一言自己紹介が入ります)
+        I am a master student at Graduate School of Economics, University of Osaka.
 
         [CV を見る →](https://www.dropbox.com/xxxxxxx/resume.pdf)
       headings:
         about: ''
         education: ''
-        interests: ''
+        interests: 'Research Interests'
     design:
       background:
         gradient_mesh:
@@ -37,18 +37,5 @@ sections:
       count: 0
       order: desc
     design:
-      view: citation
-
-  - block: collection
-    id: publications
-    content:
-      title: Publications
-      filters:
-        folders:
-          - publications
-        publication_type: 'article-journal'
-      count: 0
-      order: desc
-    design:
-      view: citation
+      view: plain-title
 ---

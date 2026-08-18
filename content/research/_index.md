@@ -14,18 +14,5 @@ sections:
       count: 0
       order: desc
     design:
-      view: citation
-
-  - block: collection
-    id: publications
-    content:
-      title: Publications
-      filters:
-        folders:
-          - publications
-        publication_type: 'article-journal'
-      count: 0
-      order: desc
-    design:
-      view: citation
+      view: plain-title
 ---

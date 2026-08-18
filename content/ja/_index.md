@@ -3,17 +3,20 @@ title: ''
 type: landing
 
 sections:
-  - block: resume-biography-3
+  - block: markdown
     content:
-      username: me
-      text: ''
-    design:
-      background:
-        gradient_mesh:
-          enable: false
-      name:
-        size: md
-      avatar:
-        size: medium
-        shape: circle
+      text: |
+        ### Ryoichiro Satake
+
+        **Position**
+
+        （ここに役職・身分を記載）
+
+        **Career**
+
+        （ここに経歴を記載）
+
+        **Research Interests**
+
+        （ここに研究分野を記載）
 ---
