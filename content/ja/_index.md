@@ -6,17 +6,15 @@ sections:
   - block: markdown
     content:
       text: |
-        ### Ryoichiro Satake
+        ### 佐竹諒一郎
 
-        **Position**
+        大阪大学大学院経済学研究科 修士課程
 
-        （ここに役職・身分を記載）
+        **研究関心**
+        政治経済学、開発経済学、都市経済学
 
-        **Career**
+        **学術論文**
+        - 英語ページをご覧ください。
 
-        （ここに経歴を記載）
-
-        **Research Interests**
-
-        （ここに研究分野を記載）
+        メールアドレス: u787901j@ecs.osaka-u.ac.jp
 ---
