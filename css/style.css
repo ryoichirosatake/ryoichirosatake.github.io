@@ -1,138 +1,514 @@
+/*
+ * Styles based on the Digital Agency Design System (DADS)
+ * https://design.digital.go.jp/dads/
+ * Token values are taken from @digital-go-jp/design-tokens v2.
+ * Units follow the DADS convention: calc(px / 16 * 1rem), px only for borders.
+ */
+
 :root {
-  --bg: #ffffff;
-  --text: #202124;
-  --text-secondary: #5f6368;
-  --accent: #3c7a5d;
-  --border: #e8eaed;
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Key color: DADS primitive green. Swap these for the DADS blue scale
+     (50 #e8f1fe, 800 #0031d8, 900 #0017c1, 1000 #00118f) to get the default look. */
+  --color-key-50: #e6f5ec;
+  --color-key-800: #197a4b;
+  --color-key-900: #115a36;
+  --color-key-1000: #0c472a;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f2f2f2;
+  --color-gray-420: #949494;
+  --color-gray-600: #666666;
+  --color-gray-700: #4d4d4d;
+  --color-gray-800: #333333;
+  --color-gray-900: #1a1a1a;
+  --color-orange-800: #c74700;
+  --color-yellow-300: #ffd43d;
+
+  --font-family-sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --content-width: calc(880 / 16 * 1rem);
+  --gutter: calc(32 / 16 * 1rem);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
+  font-family: var(--font-family-sans);
 }
 
 body {
   margin: 0;
-  font-family: var(--font);
-  color: var(--text);
-  background: var(--bg);
+  background: var(--color-white);
+  color: var(--color-gray-800);
+  /* Std-16N-170 */
+  font-size: calc(16 / 16 * 1rem);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+}
+
+p,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+/* ---------- Links (DADS Link) ---------- */
+
+a:any-link {
+  color: var(--color-key-1000);
+  text-decoration: underline;
+  text-decoration-thickness: calc(1 / 16 * 1rem);
+  text-underline-offset: calc(3 / 16 * 1rem);
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: var(--color-key-900);
+    text-decoration-thickness: calc(3 / 16 * 1rem);
+  }
+}
+
+a:active {
+  color: var(--color-orange-800);
+  text-decoration-thickness: calc(1 / 16 * 1rem);
+}
+
+:focus-visible {
+  outline: calc(4 / 16 * 1rem) solid var(--color-black);
+  outline-offset: calc(2 / 16 * 1rem);
+  border-radius: calc(4 / 16 * 1rem);
+  box-shadow: 0 0 0 calc(2 / 16 * 1rem) var(--color-yellow-300);
+}
+
+a:focus-visible {
+  background-color: var(--color-yellow-300);
+}
+
+.link-icon {
+  display: inline-block;
+  width: calc(16 / 16 * 1rem);
+  height: calc(16 / 16 * 1rem);
+  margin-left: calc(2 / 16 * 1rem);
+  vertical-align: -0.15em;
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  top: calc(8 / 16 * 1rem);
+  left: calc(8 / 16 * 1rem);
+  z-index: 10;
+  padding: calc(8 / 16 * 1rem) calc(16 / 16 * 1rem);
+  background: var(--color-white);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--content-width) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- Header (DADS Horizontal Menu) ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--color-gray-420);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: stretch;
+  gap: calc(24 / 16 * 1rem);
+}
+
+.site-header__title {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  /* Std-18B-160 */
+  font-weight: bold;
+  font-size: calc(18 / 16 * 1rem);
   line-height: 1.6;
 }
 
-.container {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 2rem;
+.site-header__title a:any-link {
+  color: var(--color-gray-900);
+  text-decoration: none;
 }
 
-nav {
+@media (hover: hover) {
+  .site-header__title a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: calc(1 / 16 * 1rem);
+  }
+}
+
+.menu {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  font-size: 0.95rem;
+  align-items: stretch;
+  padding: 0;
+  list-style: none;
+  /* Dns-16B-130 */
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: 0;
 }
 
-nav a {
-  color: var(--text-secondary);
+.menu a:any-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(64 / 16 * 1rem);
+  padding: calc(16 / 16 * 1rem) calc(20 / 16 * 1rem);
+  color: var(--color-gray-900);
   text-decoration: none;
+  white-space: nowrap;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
-  color: var(--accent);
+@media (hover: hover) {
+  .menu a:hover {
+    background-color: var(--color-gray-50);
+  }
+
+  .menu a:hover::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid var(--color-black);
+    content: "";
+  }
 }
 
-h1 {
-  font-size: 1.75rem;
-  font-weight: 500;
-  margin: 0 0 0.25rem;
+.menu a[aria-current] {
+  color: var(--color-key-1000);
 }
 
-h2 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 0.75rem;
+.menu a[aria-current]::after,
+.menu a[aria-current]:hover::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 4px solid var(--color-key-900);
+  content: "";
 }
 
-.tagline {
-  color: var(--text-secondary);
-  margin: 0 0 2rem;
+.menu a:focus-visible {
+  background-color: var(--color-yellow-300);
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
+.menu__lang a:any-link {
+  font-weight: normal;
 }
 
-a:hover {
-  text-decoration: underline;
+/* ---------- Main ---------- */
+
+.site-main {
+  padding-top: calc(64 / 16 * 1rem);
 }
 
-section {
-  margin-bottom: 2.5rem;
+/* Page heading (DADS Heading, size 36) */
+.page-title {
+  margin: 0;
+  color: var(--color-gray-900);
+  font-weight: bold;
+  font-size: calc(36 / 16 * 1rem);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
 }
 
-.cv-line {
-  margin: 0 0 2rem;
+.page-title__sub {
+  display: block;
+  margin-top: calc(4 / 16 * 1rem);
+  color: var(--color-gray-700);
+  /* Std-18N-160 */
+  font-weight: normal;
+  font-size: calc(18 / 16 * 1rem);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.lead {
+  margin-top: calc(24 / 16 * 1rem);
+  max-width: 40em;
+  /* Std-17N-170 */
+  font-size: calc(17 / 16 * 1rem);
+}
+
+.section {
+  margin-top: calc(64 / 16 * 1rem);
+}
+
+/* Section heading (DADS Heading, size 24, with chip) */
+.section-title {
+  position: relative;
+  margin: 0 0 calc(24 / 16 * 1rem);
+  padding-left: calc(1em / 3 + 0.5em);
+  color: var(--color-gray-900);
+  font-weight: bold;
+  font-size: calc(24 / 16 * 1rem);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.section-title::before {
+  position: absolute;
+  top: 0.2em;
+  bottom: 0.1em;
+  left: 0;
+  width: calc(1em / 3);
+  background-color: var(--color-key-900);
+  content: "";
+}
+
+@supports (top: 1lh) {
+  .section-title::before {
+    top: calc(0.5lh - 0.45em);
+    bottom: calc(0.5lh - 0.55em);
+  }
+}
+
+@media (forced-colors: active) {
+  .section-title::before {
+    background-color: CanvasText;
+  }
+}
+
+/* ---------- Profile table (DADS Description List) ---------- */
+
+.profile-list {
+  border-top: 1px solid var(--color-gray-420);
+}
+
+.profile-list__row {
+  display: grid;
+  grid-template-columns: calc(176 / 16 * 1rem) 1fr;
+  gap: calc(8 / 16 * 1rem) calc(24 / 16 * 1rem);
+  padding: calc(16 / 16 * 1rem) 0;
+  border-bottom: 1px solid var(--color-gray-420);
+}
+
+.profile-list dt {
+  color: var(--color-gray-900);
+  font-weight: bold;
+}
+
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(4 / 16 * 1rem) calc(24 / 16 * 1rem);
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- Papers (DADS Resource List, list style) ---------- */
+
+.paper-list {
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-gray-420);
 }
 
 .paper {
-  padding: 1rem 0;
-  border-top: 1px solid var(--border);
+  padding: calc(24 / 16 * 1rem) 0;
+  border-bottom: 1px solid var(--color-gray-420);
 }
 
-.paper:first-child {
-  border-top: none;
-  padding-top: 0;
-}
-
-.paper-title {
-  font-weight: 500;
-}
-
-.paper-meta {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-}
-
-.paper details {
-  margin-top: 0.75rem;
-}
-
-.paper summary {
-  cursor: pointer;
-  color: var(--accent);
-  font-size: 0.875rem;
-}
-
-.paper details p {
-  margin: 0.75rem 0 0;
-  color: var(--text);
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
+.paper__title {
   margin: 0;
+  color: var(--color-gray-900);
+  /* Std-20B-150 */
+  font-weight: bold;
+  font-size: calc(20 / 16 * 1rem);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.paper__meta {
+  margin-top: calc(8 / 16 * 1rem);
+  color: var(--color-gray-700);
+}
+
+.paper__more {
+  margin-top: calc(8 / 16 * 1rem);
+}
+
+/* ---------- Abstract toggle (DADS Disclosure) ---------- */
+
+.disclosure {
+  margin-top: calc(16 / 16 * 1rem);
+}
+
+.disclosure__summary {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  align-items: start;
+  gap: calc(8 / 16 * 1rem);
+  width: fit-content;
+  cursor: pointer;
+  list-style-type: none;
 }
 
-footer {
-  margin-top: 4rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+.disclosure__summary::marker {
+  content: "";
 }
 
-@media (max-width: 400px) {
-  .container {
-    padding: 2rem 1.25rem 1.5rem;
+.disclosure__summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (hover: hover) {
+  .disclosure__summary:hover {
+    text-decoration: underline;
+    text-underline-offset: calc(3 / 16 * 1rem);
+  }
+
+  .disclosure__summary:hover .disclosure__icon-circle {
+    fill: Canvas;
+  }
+
+  .disclosure__summary:hover .disclosure__icon-triangle {
+    fill: currentcolor;
+  }
+}
+
+.disclosure__summary:focus-visible {
+  background-color: var(--color-yellow-300);
+}
+
+.disclosure__icon {
+  flex-shrink: 0;
+  margin-top: calc((1lh - 24px) / 2);
+  color: var(--color-key-1000);
+}
+
+@media (forced-colors: active) {
+  .disclosure__icon {
+    color: inherit;
+  }
+}
+
+.disclosure[open] .disclosure__icon {
+  rotate: 180deg;
+}
+
+.disclosure__content {
+  margin: calc(16 / 16 * 1rem) 0 0;
+  padding-left: calc(32 / 16 * 1rem);
+  max-width: 44em;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: calc(96 / 16 * 1rem);
+  border-top: 1px solid var(--color-gray-420);
+  padding: calc(24 / 16 * 1rem) 0 calc(48 / 16 * 1rem);
+  color: var(--color-gray-700);
+  font-size: calc(14 / 16 * 1rem);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: calc(8 / 16 * 1rem) calc(24 / 16 * 1rem);
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: calc(16 / 16 * 1rem);
+  }
+
+  .site-header__inner {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-header__title {
+    padding-top: calc(16 / 16 * 1rem);
+  }
+
+  .menu {
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 0 var(--gutter);
+    overflow-x: auto;
+  }
+
+  .menu a:any-link {
+    min-height: calc(48 / 16 * 1rem);
+    padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
+  }
+
+  .menu li:first-child a:any-link {
+    padding-left: 0;
+  }
+
+  .menu__lang {
+    margin-left: auto;
+  }
+
+  .menu__lang a:any-link {
+    padding-right: 0;
+  }
+
+  .site-main {
+    padding-top: calc(40 / 16 * 1rem);
+  }
+
+  .page-title {
+    /* Std-28B-150 */
+    font-size: calc(28 / 16 * 1rem);
+    line-height: 1.5;
+  }
+
+  .page-title__sub {
+    font-size: calc(16 / 16 * 1rem);
+    line-height: 1.7;
+  }
+
+  .section {
+    margin-top: calc(48 / 16 * 1rem);
+  }
+
+  .section-title {
+    font-size: calc(20 / 16 * 1rem);
+  }
+
+  .profile-list__row {
+    grid-template-columns: 1fr;
+    gap: calc(4 / 16 * 1rem);
+  }
+
+  .paper__title {
+    font-size: calc(18 / 16 * 1rem);
+    line-height: 1.6;
+  }
+
+  .disclosure__content {
+    padding-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .disclosure__icon {
+    transition: rotate 0.15s;
   }
 }

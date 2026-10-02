@@ -6,31 +6,58 @@
   <title>Research – Ryoichiro Satake</title>
   <meta name="description" content="Working papers by Ryoichiro Satake.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <a href="/">Home</a>
-      <a href="/research/" aria-current="page">Research</a>
-      <a href="/ja/">日本語</a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <h1>Research</h1>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <p class="site-header__title"><a href="/">Ryoichiro Satake</a></p>
+      <nav aria-label="Main">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/research/" aria-current="page">Research</a></li>
+          <li class="menu__lang"><a href="/ja/" lang="ja" hreflang="ja">日本語</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-      <h2>Working Papers</h2>
-      <div class="paper">
-        <div class="paper-title">Initial Land Allocation and Long-Run Land Development: Evidence from the Tondenhei in Hokkaido</div>
-        <div class="paper-meta">August 2026</div>
-        <details>
-          <summary>Abstract</summary>
-          <p>This study analyzes the long-run impact of the Tondenhei policy, which fragmented initial land ownership in the early development stage of Hokkaido. We exploit the historical setting where fragmented land ownership (Tondenhei) and concentrated land ownership (Shokumin Kukaku) coexisted under identical infrastructure. Using a spatial regression discontinuity approach, we find that lots in former Tondenhei districts in urban areas are inefficiently large. Conversely, we find no significant effects on the lots in rural areas. These findings suggest that transaction costs arising from initial land ownership allocation have shaped long-run land development through distinct mechanisms conditional on urbanization pressure.</p>
-        </details>
-      </div>
+  <main id="main" class="container site-main">
+    <h1 class="page-title">Research</h1>
+
+    <section class="section" aria-labelledby="working-papers">
+      <h2 class="section-title" id="working-papers">Working Papers</h2>
+      <ul class="paper-list">
+        <li class="paper" id="tondenhei">
+          <h3 class="paper__title">Initial Land Allocation and Long-Run Land Development: Evidence from the Tondenhei in Hokkaido</h3>
+          <p class="paper__meta">August 2026</p>
+          <details class="disclosure" open>
+            <summary class="disclosure__summary">
+              <svg class="disclosure__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="currentcolor"/>
+                <circle class="disclosure__icon-circle" cx="12" cy="12" r="8" fill="currentcolor"/>
+                <path class="disclosure__icon-triangle" d="M17 10H7L12 15L17 10Z" fill="Canvas"/>
+              </svg>
+              Abstract
+            </summary>
+            <div class="disclosure__content">
+              <p>This study analyzes the long-run impact of the Tondenhei policy, which fragmented initial land ownership in the early development stage of Hokkaido. We exploit the historical setting where fragmented land ownership (Tondenhei) and concentrated land ownership (Shokumin Kukaku) coexisted under identical infrastructure. Using a spatial regression discontinuity approach, we find that lots in former Tondenhei districts in urban areas are inefficiently large. Conversely, we find no significant effects on the lots in rural areas. These findings suggest that transaction costs arising from initial land ownership allocation have shaped long-run land development through distinct mechanisms conditional on urbanization pressure.</p>
+            </div>
+          </details>
+        </li>
+      </ul>
     </section>
+  </main>
 
-    <footer>&copy; 2026 Ryoichiro Satake</footer>
-  </div>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Ryoichiro Satake</p>
+    </div>
+  </footer>
 </body>
 </html>

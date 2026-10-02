@@ -5,38 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>佐竹諒一郎</title>
   <meta name="description" content="佐竹諒一郎 — 大阪大学大学院経済学研究科 修士課程">
+  <link rel="alternate" hreflang="en" href="/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <a href="/">Home</a>
-      <a href="/research/">Research</a>
-      <a href="/ja/" aria-current="page">日本語</a>
-    </nav>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
-    <h1>佐竹諒一郎</h1>
-    <p class="tagline">大阪大学大学院経済学研究科 修士課程</p>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <p class="site-header__title"><a href="/ja/">佐竹 諒一郎</a></p>
+      <nav aria-label="メイン">
+        <ul class="menu">
+          <li><a href="/ja/" aria-current="page">ホーム</a></li>
+          <li><a href="/research/" hreflang="en">研究（英語）</a></li>
+          <li class="menu__lang"><a href="/" lang="en" hreflang="en">English</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-      <h2>研究関心</h2>
-      <p>政治経済学、開発経済学、都市経済学</p>
+  <main id="main" class="container site-main">
+    <hgroup>
+      <h1 class="page-title">佐竹 諒一郎</h1>
+      <p class="page-title__sub" lang="en">Ryoichiro Satake</p>
+    </hgroup>
+
+    <section class="section" aria-labelledby="profile">
+      <h2 class="section-title" id="profile">プロフィール</h2>
+      <dl class="profile-list">
+        <div class="profile-list__row">
+          <dt>所属</dt>
+          <dd>大阪大学大学院経済学研究科 修士課程</dd>
+        </div>
+        <div class="profile-list__row">
+          <dt>研究関心</dt>
+          <dd>政治経済学、開発経済学、都市経済学</dd>
+        </div>
+        <div class="profile-list__row">
+          <dt>CV</dt>
+          <dd>
+            <a href="https://www.dropbox.com/scl/fi/mnm0ykt415oq55o914ac6/cv.pdf?rlkey=kv2o2gu0qrgglvg9orrkd6h93&st=3cjdl1bs&dl=0" target="_blank" rel="noopener">CV（英語・PDF）<svg class="link-icon" viewBox="0 0 48 48" role="img" aria-label="新規タブで開きます"><path d="M22 6V9H9V39H39V26H42V42H6V6H22ZM42 6V20H39V11.2L21 29L19 27L36.8 9H28V6H42Z" fill="currentcolor"/></svg></a>
+          </dd>
+        </div>
+        <div class="profile-list__row">
+          <dt>連絡先</dt>
+          <dd>
+            <ul class="inline-list">
+              <li><a href="mailto:ryoichiro.satake(at)gmail.com">ryoichiro.satake@gmail.com</a></li>
+              <li><a href="https://github.com/ryoichirosatake" target="_blank" rel="noopener">GitHub<svg class="link-icon" viewBox="0 0 48 48" role="img" aria-label="新規タブで開きます"><path d="M22 6V9H9V39H39V26H42V42H6V6H22ZM42 6V20H39V11.2L21 29L19 27L36.8 9H28V6H42Z" fill="currentcolor"/></svg></a></li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
     </section>
 
-    <section>
-      <h2>学術論文</h2>
-      <p><a href="/research/">英語ページ</a>をご覧ください。</p>
-    </section>
-
-    <section>
-      <h2>連絡先</h2>
-      <ul class="contact-list">
-        <li><a href="mailto:ryoichiro.satake(at)gmail.com">ryoichiro.satake@gmail.com</a></li>
+    <section class="section" aria-labelledby="working-papers">
+      <h2 class="section-title" id="working-papers">ワーキングペーパー</h2>
+      <ul class="paper-list">
+        <li class="paper">
+          <h3 class="paper__title" lang="en">Initial Land Allocation and Long-Run Land Development: Evidence from the Tondenhei in Hokkaido</h3>
+          <p class="paper__meta">2026年8月</p>
+          <p class="paper__more"><a href="/research/#tondenhei" hreflang="en">概要（英語）</a></p>
+        </li>
       </ul>
     </section>
+  </main>
 
-    <footer>&copy; 2026 Ryoichiro Satake</footer>
-  </div>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Ryoichiro Satake</p>
+    </div>
+  </footer>
 </body>
 </html>
