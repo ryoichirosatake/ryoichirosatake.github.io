@@ -314,10 +314,6 @@ a:focus-visible {
   color: var(--color-gray-700);
 }
 
-.empty-note {
-  color: var(--color-gray-700);
-}
-
 .inline-list {
   display: flex;
   flex-wrap: wrap;
