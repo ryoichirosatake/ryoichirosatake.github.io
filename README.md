@@ -7,8 +7,9 @@ Ryoichiro Satake's personal site. Plain HTML/CSS, no build step, no framework.
 - `index.html` — Home
 - `research/index.html` — Research (`/research/`)
 - `ja/index.html` — Japanese page (`/ja/`)
-- `css/style.css` — shared stylesheet
-- `uploads/` — static files (e.g. CV)
+- `css/style.css` — shared stylesheet (based on the Digital Agency Design System tokens)
+
+The CV is hosted on Dropbox and linked from the Profile section.
 
 ## Development
 

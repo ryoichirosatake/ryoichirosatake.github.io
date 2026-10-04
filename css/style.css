@@ -6,12 +6,11 @@
  */
 
 :root {
-  /* Key color: DADS primitive green. Swap these for the DADS blue scale
-     (50 #e8f1fe, 800 #0031d8, 900 #0017c1, 1000 #00118f) to get the default look. */
-  --color-key-50: #e6f5ec;
-  --color-key-800: #197a4b;
-  --color-key-900: #115a36;
-  --color-key-1000: #0c472a;
+  /* Key color: DADS primitive blue (the DADS default key color). */
+  --color-key-50: #e8f1fe;
+  --color-key-800: #0031d8;
+  --color-key-900: #0017c1;
+  --color-key-1000: #00118f;
 
   --color-white: #ffffff;
   --color-black: #000000;
