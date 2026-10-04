@@ -308,6 +308,16 @@ a:focus-visible {
   font-weight: bold;
 }
 
+.profile-list__note {
+  display: block;
+  margin-top: calc(4 / 16 * 1rem);
+  color: var(--color-gray-700);
+}
+
+.empty-note {
+  color: var(--color-gray-700);
+}
+
 .inline-list {
   display: flex;
   flex-wrap: wrap;
